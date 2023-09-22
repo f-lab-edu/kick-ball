@@ -3,6 +3,7 @@ CREATE TABLE stadium (
     name VARCHAR(100) not null,
     address VARCHAR(100) not null,
     size VARCHAR(50) not null,
+    two_hour_rate INT not null,
     guidelines CLOB,
     parking BOOLEAN not null,
     airConditioning BOOLEAN not null,
