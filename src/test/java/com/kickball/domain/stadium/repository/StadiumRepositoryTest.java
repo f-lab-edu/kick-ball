@@ -50,6 +50,7 @@ class StadiumRepositoryTest {
 		assertEquals(expected.getSize(), actual.getSize());
 		assertEquals(expected.getAddress(), actual.getAddress());
 		assertEquals(expected.getGuidelines(), actual.getGuidelines());
+		assertEquals(expected.getTwoHourRate(), actual.getTwoHourRate());
 		assertEquals(expected.isAirConditioning(), (actual.isAirConditioning()));
 		assertEquals(expected.isShowers(), (actual.isShowers()));
 		assertEquals(expected.isParking(), (actual.isParking()));
@@ -65,6 +66,7 @@ class StadiumRepositoryTest {
 			.width(30)
 			.length(15)
 			.guidelines("[안내문]\n" + "해당 구장은 5vs5 입니다.\n" + "별도의 쓰레기통이 없으니 발생하는 쓰레기는 가져가주시길 바랍니다.")
+			.twoHourRate(80000)
 			.parking(true)
 			.airConditioning(true)
 			.showers(false)
