@@ -9,6 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
 @Table(name = "members")
 @Entity
 public class Member {
@@ -29,4 +34,11 @@ public class Member {
 
 	@Column(name = "provider", nullable = false, length = 50)
 	private String provider;
+
+	public Member(String username, String password, String provider) {
+		this.username = username;
+		this.password = password;
+		this.role = RoleType.USER;
+		this.provider = provider;
+	}
 }
