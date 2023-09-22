@@ -15,9 +15,6 @@ class StadiumRepositoryTest {
 	@Autowired
 	private StadiumRepository stadiumRepository;
 
-	@Autowired
-	private TestEntityManager testEntityManager;
-
 	@Test
 	public void 구장저장_조회_테스트() {
 
