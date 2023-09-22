@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import com.kickball.domain.member.domain.Member;
 import com.kickball.domain.stadium.domain.Stadium;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -45,4 +46,15 @@ public class Reservation {
 
 	@Column(name = "reservation_time")
 	private int reservationTime;
+
+	@Builder
+	public Reservation(Member member, Stadium stadium, LocalDate reservationDate, LocalTime startTime,
+		int reservationTime) {
+		this.member = member;
+		this.stadium = stadium;
+		this.reservationDate = reservationDate;
+		this.startTime = startTime;
+		this.reservationTime = reservationTime;
+	}
+
 }
