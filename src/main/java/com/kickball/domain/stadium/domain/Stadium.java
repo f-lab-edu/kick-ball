@@ -31,6 +31,9 @@ public class Stadium {
 	@Column(name = "size", nullable = false, length = 50)
 	private String size;
 
+	@Column(name = "two_hour_rate")
+	private int twoHourRate;
+
 	@Lob
 	@Column(name = "guidelines")
 	private String guidelines;
@@ -54,11 +57,13 @@ public class Stadium {
 	private boolean shoesRental;
 
 	@Builder
-	public Stadium(String name, String address, int width, int length, String guidelines, boolean parking,
-		boolean airConditioning, boolean showers, boolean ballRental, boolean vestRental, boolean shoesRental) {
+	public Stadium(String name, String address, int width, int length, String guidelines, int twoHourRate,
+		boolean parking, boolean airConditioning, boolean showers, boolean ballRental, boolean vestRental,
+		boolean shoesRental) {
 		this.name = name;
 		this.address = address;
 		this.size = String.valueOf(width + "x" + length);
+		this.twoHourRate = twoHourRate;
 		this.guidelines = guidelines;
 		this.parking = parking;
 		this.airConditioning = airConditioning;
