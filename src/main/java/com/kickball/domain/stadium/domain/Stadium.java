@@ -8,6 +8,12 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
 @Table(name = "stadium")
 @Entity
 public class Stadium {
@@ -46,4 +52,20 @@ public class Stadium {
 
 	@Column(name = "shoes_rental")
 	private boolean shoesRental;
+
+	@Builder
+	public Stadium(String name, String address, int width, int length, String guidelines, boolean parking,
+		boolean airConditioning, boolean showers, boolean ballRental, boolean vestRental, boolean shoesRental) {
+		this.name = name;
+		this.address = address;
+		this.size = String.valueOf(width + "x" + length);
+		this.guidelines = guidelines;
+		this.parking = parking;
+		this.airConditioning = airConditioning;
+		this.showers = showers;
+		this.ballRental = ballRental;
+		this.vestRental = vestRental;
+		this.shoesRental = shoesRental;
+	}
+
 }
