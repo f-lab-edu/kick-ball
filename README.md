@@ -7,4 +7,4 @@
 
 ---
 ### 클래스 다이어그램
-![KickBallClassDiagram](https://github.com/f-lab-edu/kick-ball/assets/80821744/7d1425f1-06fd-4f6e-b92c-ff24ba413649)
+![KickBallClassDiagram](https://github.com/f-lab-edu/kick-ball/assets/80821744/6304d2d6-42a6-4367-9393-1ad93b693236)
