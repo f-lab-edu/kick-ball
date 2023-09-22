@@ -1,4 +1,4 @@
-package com.kickball.domain.reservation;
+package com.kickball.domain.reservation.domain;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
