@@ -4,4 +4,4 @@ CREATE TABLE members (
     password VARCHAR(50) not null,
     role VARCHAR(50) not null,
     provider VARCHAR(50) not null
-)
+);
