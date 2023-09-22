@@ -15,6 +15,9 @@ class StadiumRepositoryTest {
 	@Autowired
 	private StadiumRepository stadiumRepository;
 
+	@Autowired
+	private TestEntityManager em;
+
 	@Test
 	public void 구장저장_조회_테스트() {
 
@@ -22,11 +25,13 @@ class StadiumRepositoryTest {
 
 		Stadium savedStadium = stadiumRepository.save(stadium);
 
+		em.clear();
+
 		Stadium foundStadium = stadiumRepository.findById(savedStadium.getId()).orElse(null);
 
 		assertNotNull(foundStadium);
 		stadiumEquals(stadium, savedStadium);
-		stadiumEquals(stadium, foundStadium);
+		stadiumEquals(savedStadium, foundStadium);
 	}
 
 	@Test
@@ -40,17 +45,17 @@ class StadiumRepositoryTest {
 		assertNull(stadiumRepository.findById(savedStadium.getId()).orElse(null));
 	}
 
-	private static void stadiumEquals(Stadium stadium, Stadium foundStadium) {
-		assertEquals(stadium.getName(), foundStadium.getName());
-		assertEquals(stadium.getSize(), foundStadium.getSize());
-		assertEquals(stadium.getAddress(), foundStadium.getAddress());
-		assertEquals(stadium.getGuidelines(), foundStadium.getGuidelines());
-		assertEquals(stadium.isAirConditioning(), (foundStadium.isAirConditioning()));
-		assertEquals(stadium.isShowers(), (foundStadium.isShowers()));
-		assertEquals(stadium.isParking(), (foundStadium.isParking()));
-		assertEquals(stadium.isBallRental(), (foundStadium.isBallRental()));
-		assertEquals(stadium.isVestRental(), (foundStadium.isVestRental()));
-		assertEquals(stadium.isShoesRental(), (foundStadium.isShoesRental()));
+	private static void stadiumEquals(Stadium expected, Stadium actual) {
+		assertEquals(expected.getName(), actual.getName());
+		assertEquals(expected.getSize(), actual.getSize());
+		assertEquals(expected.getAddress(), actual.getAddress());
+		assertEquals(expected.getGuidelines(), actual.getGuidelines());
+		assertEquals(expected.isAirConditioning(), (actual.isAirConditioning()));
+		assertEquals(expected.isShowers(), (actual.isShowers()));
+		assertEquals(expected.isParking(), (actual.isParking()));
+		assertEquals(expected.isBallRental(), (actual.isBallRental()));
+		assertEquals(expected.isVestRental(), (actual.isVestRental()));
+		assertEquals(expected.isShoesRental(), (actual.isShoesRental()));
 	}
 
 	private static Stadium getFixture() {
