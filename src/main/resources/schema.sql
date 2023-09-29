@@ -3,7 +3,6 @@ CREATE TABLE stadium (
     name VARCHAR(100) not null,
     address VARCHAR(100) not null,
     size VARCHAR(50) not null,
-    two_hour_rate INT not null,
     guidelines CLOB,
     parking BOOLEAN not null,
     airConditioning BOOLEAN not null,
@@ -11,4 +10,12 @@ CREATE TABLE stadium (
     ballRental BOOLEAN not null,
     vestRental BOOLEAN not null,
     shoesRental BOOLEAN not null
+);
+
+CREATE TABLE members (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) not null,
+    password VARCHAR(50) not null,
+    role VARCHAR(50) not null,
+    provider VARCHAR(50) not null
 );
