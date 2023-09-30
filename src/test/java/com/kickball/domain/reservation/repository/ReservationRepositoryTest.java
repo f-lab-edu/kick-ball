@@ -43,7 +43,6 @@ class ReservationRepositoryTest {
 		reservationRepository.delete(savedReservation);
 
 		assertNull(reservationRepository.findById(savedReservation.getId()).orElse(null));
-
 	}
 
 	private void reservationEquals(Reservation expected, Reservation actual) {
