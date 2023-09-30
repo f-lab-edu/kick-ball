@@ -26,7 +26,7 @@ CREATE TABLE reservations (
     stadium_id BIGINT not null,
     reservation_date DATE not null,
     start_time TIME not null,
-    reservation_time INT not null,
+    use_time INT not null,
     FOREIGN KEY (member_id) REFERENCES members (id),
     FOREIGN KEY (stadium_id) REFERENCES stadium (id)
 );

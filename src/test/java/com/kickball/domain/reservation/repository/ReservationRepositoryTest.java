@@ -53,7 +53,7 @@ class ReservationRepositoryTest {
 	private void reservationEquals(Reservation expected, Reservation actual) {
 		assertEquals(expected.getStartTime(), actual.getStartTime());
 		assertEquals(expected.getReservationDate(), actual.getReservationDate());
-		assertEquals(expected.getReservationTime(), actual.getReservationTime());
+		assertEquals(expected.getUseTime(), actual.getUseTime());
 	}
 
 	private Reservation getFixture(TestEntityManager em) {
@@ -83,7 +83,7 @@ class ReservationRepositoryTest {
 			.stadium(savedStadium)
 			.reservationDate(LocalDate.now())
 			.startTime(LocalTime.of(5, 0, 0))
-			.reservationTime(2)
+			.useTime(2)
 			.build();
 	}
 

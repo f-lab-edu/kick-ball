@@ -44,17 +44,17 @@ public class Reservation {
 	@Column(name = "start_time", nullable = false)
 	private LocalTime startTime;
 
-	@Column(name = "reservation_time")
-	private int reservationTime;
+	@Column(name = "use_time")
+	private int useTime;
 
 	@Builder
 	public Reservation(Member member, Stadium stadium, LocalDate reservationDate, LocalTime startTime,
-		int reservationTime) {
+		int useTime) {
 		this.member = member;
 		this.stadium = stadium;
 		this.reservationDate = reservationDate;
 		this.startTime = startTime;
-		this.reservationTime = reservationTime;
+		this.useTime = useTime;
 	}
 
 }
