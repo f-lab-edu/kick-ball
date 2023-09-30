@@ -11,7 +11,7 @@ import com.kickball.domain.stadium.domain.Stadium;
 
 public class Fixture {
 
-	public static Reservation getFixture(TestEntityManager em) {
+	public static Reservation getReservationFixture(TestEntityManager em) {
 		Member member = new Member("base6666@naver.com", "12345", "kakao");
 		Member savedMember = em.persist(member);
 

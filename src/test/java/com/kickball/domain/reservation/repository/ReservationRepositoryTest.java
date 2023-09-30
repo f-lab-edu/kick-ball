@@ -21,7 +21,7 @@ class ReservationRepositoryTest {
 
 	@Test
 	public void 예약저장_조회_테스트() {
-		Reservation reservation = Fixture.getFixture(em);
+		Reservation reservation = Fixture.getReservationFixture(em);
 
 		Reservation savedReservation = reservationRepository.save(reservation);
 
@@ -36,7 +36,7 @@ class ReservationRepositoryTest {
 
 	@Test
 	public void 예약_삭제_테스트() {
-		Reservation reservation = Fixture.getFixture(em);
+		Reservation reservation = Fixture.getReservationFixture(em);
 
 		Reservation savedReservation = reservationRepository.save(reservation);
 
