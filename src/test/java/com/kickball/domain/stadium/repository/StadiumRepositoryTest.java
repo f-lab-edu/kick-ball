@@ -22,7 +22,7 @@ class StadiumRepositoryTest {
 	@Test
 	public void 구장저장_조회_테스트() {
 
-		Stadium stadium = StadiumFixture.getStadiumFixture();
+		Stadium stadium = StadiumFixture.getStadium();
 
 		Stadium savedStadium = stadiumRepository.save(stadium);
 
@@ -37,7 +37,7 @@ class StadiumRepositoryTest {
 
 	@Test
 	public void 구장_삭제_테스트() {
-		Stadium stadium = StadiumFixture.getStadiumFixture();
+		Stadium stadium = StadiumFixture.getStadium();
 
 		Stadium savedStadium = stadiumRepository.save(stadium);
 
