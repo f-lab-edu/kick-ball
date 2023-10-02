@@ -1,7 +1,5 @@
 package com.kickball.domain.stadium.dto.response;
 
-import com.kickball.domain.stadium.domain.Stadium;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
