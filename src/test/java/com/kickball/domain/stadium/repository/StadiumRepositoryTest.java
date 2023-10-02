@@ -8,6 +8,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
 import com.kickball.domain.stadium.domain.Stadium;
+import com.kickball.domain.stadium.fixture.StadiumFixture;
 
 @DataJpaTest
 class StadiumRepositoryTest {
@@ -21,7 +22,7 @@ class StadiumRepositoryTest {
 	@Test
 	public void 구장저장_조회_테스트() {
 
-		Stadium stadium = getFixture();
+		Stadium stadium = StadiumFixture.getStadiumFixture();
 
 		Stadium savedStadium = stadiumRepository.save(stadium);
 
@@ -36,7 +37,7 @@ class StadiumRepositoryTest {
 
 	@Test
 	public void 구장_삭제_테스트() {
-		Stadium stadium = getFixture();
+		Stadium stadium = StadiumFixture.getStadiumFixture();
 
 		Stadium savedStadium = stadiumRepository.save(stadium);
 
@@ -57,23 +58,6 @@ class StadiumRepositoryTest {
 		assertEquals(expected.isBallRental(), (actual.isBallRental()));
 		assertEquals(expected.isVestRental(), (actual.isVestRental()));
 		assertEquals(expected.isShoesRental(), (actual.isShoesRental()));
-	}
-
-	private static Stadium getFixture() {
-		return Stadium.builder()
-			.name("구장 1")
-			.address("인천시 부평구 갈산동")
-			.width(30)
-			.length(15)
-			.guidelines("[안내문]\n" + "해당 구장은 5vs5 입니다.\n" + "별도의 쓰레기통이 없으니 발생하는 쓰레기는 가져가주시길 바랍니다.")
-			.twoHourRate(80000)
-			.parking(true)
-			.airConditioning(true)
-			.showers(false)
-			.ballRental(true)
-			.vestRental(true)
-			.shoesRental(false)
-			.build();
 	}
 
 }
