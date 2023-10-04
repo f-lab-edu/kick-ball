@@ -1,4 +1,4 @@
-package com.kickball.stadium.dto.response;
+package com.kickball.stadium.controller.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
