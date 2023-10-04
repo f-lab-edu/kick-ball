@@ -10,9 +10,9 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.kickball.stadium.domain.Stadium;
-import com.kickball.stadium.controller.dto.response.StadiumResponse;
 import com.kickball.stadium.fixture.StadiumFixture;
 import com.kickball.stadium.repository.StadiumRepository;
+import com.kickball.stadium.utils.StadiumTestUtils;
 
 @ExtendWith(MockitoExtension.class)
 class StadiumSaveServiceMockTest {
@@ -29,19 +29,11 @@ class StadiumSaveServiceMockTest {
 		Stadium stadium = StadiumFixture.getStadium();
 		given(stadiumRepository.save(any(Stadium.class))).willReturn(stadium);
 
-		//when & then
+		//when
 		Stadium savedStadium = assertDoesNotThrow(() -> stadiumSaveService.saveStadium(stadium));
-		assertEquals(stadium.getName(), savedStadium.getName());
-		assertEquals(stadium.getSize(), savedStadium.getSize());
-		assertEquals(stadium.getAddress(), savedStadium.getAddress());
-		assertEquals(stadium.getGuidelines(), savedStadium.getGuidelines());
-		assertEquals(stadium.getTwoHourRate(), savedStadium.getTwoHourRate());
-		assertEquals(stadium.isAirConditioning(), (savedStadium.isAirConditioning()));
-		assertEquals(stadium.isShowers(), (savedStadium.isShowers()));
-		assertEquals(stadium.isParking(), (savedStadium.isParking()));
-		assertEquals(stadium.isBallRental(), (savedStadium.isBallRental()));
-		assertEquals(stadium.isVestRental(), (savedStadium.isVestRental()));
-		assertEquals(stadium.isShoesRental(), (savedStadium.isShoesRental()));
+
+		//then
+		StadiumTestUtils.assertStadiumDataEquals(stadium, savedStadium);
 	}
 
 }
