@@ -61,21 +61,4 @@ public class StadiumSaveRequest {
 	@NotNull(message = "풋살화대여 여부를 입력해야 합니다. ")
 	private Boolean shoesRental;
 
-	public Stadium toEntity() {
-		return Stadium.builder()
-			.name(name)
-			.address(address)
-			.width(width)
-			.length(length)
-			.guidelines(guidelines)
-			.twoHourRate(twoHourRate)
-			.parking(parking)
-			.airConditioning(airConditioning)
-			.showers(showers)
-			.ballRental(ballRental)
-			.vestRental(vestRental)
-			.shoesRental(shoesRental)
-			.build();
-	}
-
 }
