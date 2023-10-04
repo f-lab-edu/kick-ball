@@ -1,7 +1,7 @@
 package com.kickball.stadium.fixture;
 
 import com.kickball.stadium.domain.Stadium;
-import com.kickball.stadium.dto.request.StadiumSaveRequest;
+import com.kickball.stadium.controller.dto.request.StadiumSaveRequest;
 
 public class StadiumFixture {
 
