@@ -1,4 +1,4 @@
-package com.kickball.stadium.dto.request;
+package com.kickball.stadium.controller.dto.request;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
