@@ -74,4 +74,18 @@ public class Stadium {
 		this.shoesRental = shoesRental;
 	}
 
+	public void update(Stadium updateData) {
+		this.name = updateData.getName();
+		this.size = updateData.getSize();
+		this.address = updateData.getAddress();
+		this.guidelines = updateData.getGuidelines();
+		this.twoHourRate = updateData.getTwoHourRate();
+		this.airConditioning = updateData.isAirConditioning();
+		this.showers = updateData.isShowers();
+		this.parking = updateData.isParking();
+		this.ballRental = updateData.isBallRental();
+		this.vestRental = updateData.isVestRental();
+		this.shoesRental = updateData.isShoesRental();
+	}
+
 }
