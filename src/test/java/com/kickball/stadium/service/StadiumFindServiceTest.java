@@ -2,6 +2,8 @@ package com.kickball.stadium.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.kickball.stadium.domain.Stadium;
 import com.kickball.stadium.fixture.StadiumFixture;
 import com.kickball.stadium.repository.StadiumRepository;
+import com.kickball.stadium.utils.StadiumTestUtils;
 
 @SpringBootTest
 class StadiumFindServiceTest {
@@ -50,4 +53,27 @@ class StadiumFindServiceTest {
 		//then
 		assertEquals(0, stadiums.getTotalElements());
 	}
+
+	@Test
+	void 특정_구장_읽기_테스트() {
+		//given
+		Stadium savedStadium = stadiumRepository.save(StadiumFixture.getStadium());
+		Long id = savedStadium.getId();
+
+		//when
+		Stadium foundStadium = stadiumFindService.findStadiumById(id);
+
+		//then
+		StadiumTestUtils.assertStadiumDataEquals(savedStadium, foundStadium);
+	}
+
+	@Test
+	void 특정_구장_읽기_테스트_존재하지_않는_Id() {
+		//given
+		Long id = 0L;
+
+		//when & then
+		assertThrows(EntityNotFoundException.class, () -> stadiumFindService.findStadiumById(id));
+	}
+
 }
