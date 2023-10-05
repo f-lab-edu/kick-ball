@@ -11,13 +11,13 @@ import com.kickball.stadium.fixture.StadiumFixture;
 import com.kickball.stadium.repository.StadiumRepository;
 
 @SpringBootTest
-class StadiumSaveServiceTest {
+class StadiumAddServiceTest {
 
 	@Autowired
 	private StadiumRepository stadiumRepository;
 
 	@Autowired
-	private StadiumSaveService stadiumSaveService;
+	private StadiumAddService stadiumAddService;
 
 	@Test
 	void 구장_생성_테스트() {
@@ -25,7 +25,7 @@ class StadiumSaveServiceTest {
 		Stadium stadium = StadiumFixture.getStadium();
 
 		//when & then
-		assertDoesNotThrow(() -> stadiumSaveService.saveStadium(stadium));
+		assertDoesNotThrow(() -> stadiumAddService.addStadium(stadium));
 	}
 
 }
