@@ -1,5 +1,7 @@
 package com.kickball.stadium.service;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,10 @@ public class StadiumFindService {
 
 	public Page<Stadium> findAllStadium(Pageable pageable) {
 		return stadiumRepository.findAll(pageable);
+	}
+
+	public Stadium findStadiumById(Long id) {
+		return stadiumRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Stadium Id가 존재하지 않습니다."));
 	}
 
 }
