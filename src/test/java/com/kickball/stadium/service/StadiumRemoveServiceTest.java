@@ -39,7 +39,6 @@ class StadiumRemoveServiceTest {
 	@Test
 	public void 구장_삭제_테스트_존재하지_않는_Id() {
 		//given
-		Stadium savedStadium = stadiumRepository.saveAndFlush(StadiumFixture.getStadium());
 		Long id = 0L;
 
 		//when & then
