@@ -15,8 +15,8 @@ public class StadiumSaveService {
 
 	private final StadiumRepository stadiumRepository;
 
-	public Stadium saveStadium(Stadium stadium) {
-		return stadiumRepository.save(stadium);
+	public void saveStadium(Stadium stadium) {
+		stadiumRepository.save(stadium);
 	}
 
 }
