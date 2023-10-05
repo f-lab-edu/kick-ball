@@ -39,7 +39,6 @@ class StadiumModifyServiceTest {
 	@Test
 	void 구장_수정_테스트_존재하지_않는_Id() {
 		//given
-		Stadium savedStadium = stadiumRepository.save(StadiumFixture.getStadium());
 		Long id = 0L;
 		Stadium updateData = StadiumFixture.getUpdatedStadium();
 
