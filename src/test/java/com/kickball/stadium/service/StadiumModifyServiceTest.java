@@ -14,13 +14,13 @@ import com.kickball.stadium.repository.StadiumRepository;
 import com.kickball.stadium.utils.StadiumTestUtils;
 
 @SpringBootTest
-class StadiumUpdateServiceTest {
+class StadiumModifyServiceTest {
 
 	@Autowired
 	private StadiumRepository stadiumRepository;
 
 	@Autowired
-	private StadiumUpdateService stadiumUpdateService;
+	private StadiumModifyService stadiumModifyService;
 
 	@Test
 	void 구장_수정_테스트() {
@@ -30,7 +30,7 @@ class StadiumUpdateServiceTest {
 		Stadium updateData = StadiumFixture.getUpdatedStadium();
 
 		//when
-		Stadium stadium = stadiumUpdateService.updateStadium(id, updateData);
+		Stadium stadium = stadiumModifyService.modifyStadium(id, updateData);
 
 		//then
 		StadiumTestUtils.assertStadiumDataEquals(updateData, stadium);
@@ -44,7 +44,7 @@ class StadiumUpdateServiceTest {
 		Stadium updateData = StadiumFixture.getUpdatedStadium();
 
 		//when & then
-		assertThrows(EntityNotFoundException.class, () -> stadiumUpdateService.updateStadium(id, updateData));
+		assertThrows(EntityNotFoundException.class, () -> stadiumModifyService.modifyStadium(id, updateData));
 	}
 
 }

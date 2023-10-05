@@ -13,11 +13,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Transactional
 @Service
-public class StadiumUpdateService {
+public class StadiumModifyService {
 
 	private final StadiumRepository stadiumRepository;
 
-	public Stadium updateStadium(Long id, Stadium updateData) {
+	public Stadium modifyStadium(Long id, Stadium updateData) {
 		Stadium foundStadium = stadiumRepository.findById(id)
 			.orElseThrow(() -> new EntityNotFoundException("Stadium Id가 존재하지 않습니다."));
 
