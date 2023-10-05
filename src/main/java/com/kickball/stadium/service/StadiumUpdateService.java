@@ -17,8 +17,8 @@ public class StadiumUpdateService {
 
 	private final StadiumRepository stadiumRepository;
 
-	public Stadium updateStadium(Stadium updateData) {
-		Stadium foundStadium = stadiumRepository.findById(updateData.getId())
+	public Stadium updateStadium(Long id, Stadium updateData) {
+		Stadium foundStadium = stadiumRepository.findById(id)
 			.orElseThrow(() -> new EntityNotFoundException("Stadium Id가 존재하지 않습니다."));
 
 		foundStadium.update(updateData);
