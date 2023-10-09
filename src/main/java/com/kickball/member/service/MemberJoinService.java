@@ -18,7 +18,7 @@ public class MemberJoinService {
 
 	public void join(Member member) {
 		memberRepository.findByUsername(member.getUsername()).ifPresent(existingMember -> {
-			throw new UsernameAlreadyExistsException("이미 존재하는 username 입니다.");
+			throw new UsernameAlreadyExistsException();
 		});
 
 		memberRepository.save(member);
