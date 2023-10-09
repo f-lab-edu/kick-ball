@@ -11,12 +11,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Transactional
 @Service
-public class StadiumSaveService {
+public class StadiumAddService {
 
 	private final StadiumRepository stadiumRepository;
 
-	public Stadium saveStadium(Stadium stadium) {
-		return stadiumRepository.save(stadium);
+	public void addStadium(Stadium stadium) {
+		stadiumRepository.save(stadium);
 	}
 
 }
