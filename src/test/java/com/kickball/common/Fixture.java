@@ -5,9 +5,9 @@ import java.time.LocalTime;
 
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
-import com.kickball.domain.member.domain.Member;
-import com.kickball.domain.reservation.domain.Reservation;
-import com.kickball.domain.stadium.domain.Stadium;
+import com.kickball.member.domain.Member;
+import com.kickball.reservation.domain.Reservation;
+import com.kickball.stadium.domain.Stadium;
 
 public class Fixture {
 
