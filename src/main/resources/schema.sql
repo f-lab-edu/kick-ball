@@ -17,7 +17,8 @@ CREATE TABLE members (
     username VARCHAR(50) not null,
     password VARCHAR(50) not null,
     role VARCHAR(50) not null,
-    provider VARCHAR(50) not null
+    provider VARCHAR(50) not null,
+    UNIQUE (username)
 );
 
 CREATE TABLE reservations (
