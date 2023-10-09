@@ -19,7 +19,7 @@ public class StadiumModifyService {
 
 	public Stadium modifyStadium(Long id, Stadium updateData) {
 		Stadium foundStadium = stadiumRepository.findById(id)
-			.orElseThrow(() -> new EntityNotFoundException("Stadium Id가 존재하지 않습니다."));
+			.orElseThrow(() -> new EntityNotFoundException("구장이 존재하지 않습니다."));
 
 		foundStadium.update(updateData);
 
