@@ -24,7 +24,7 @@ public class StadiumFindService {
 	}
 
 	public Stadium findStadiumById(Long id) {
-		return stadiumRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Stadium Id가 존재하지 않습니다."));
+		return stadiumRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("등록된 구장이 존재하지 않습니다."));
 	}
 
 }
