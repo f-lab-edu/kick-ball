@@ -1,12 +1,9 @@
 package com.kickball.member.service;
 
-import javax.persistence.EntityNotFoundException;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kickball.common.exception.AuthenticationFailedException;
-import com.kickball.common.exception.UsernameAlreadyExistsException;
 import com.kickball.member.repository.MemberRepository;
 
 import lombok.RequiredArgsConstructor;
